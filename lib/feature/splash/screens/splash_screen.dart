@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:joysper_homework1/feature/splash/provider/splash_provider.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -10,8 +11,10 @@ class SplashScreen extends StatefulWidget {
 class _SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
-
-    
+    return Scaffold(
+      body: Center(
+        child: Text('Splash Screen'),
+      ),
+    );
   }
 }
