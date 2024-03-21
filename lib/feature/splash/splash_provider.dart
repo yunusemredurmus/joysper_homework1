@@ -16,8 +16,9 @@ class SplashProvider extends BaseProvider {
       if (AppUserManager().user != null) {
         isCurrentUser = true;
         notifyListeners();
-        // ignore: use_build_context_synchronously
-        context.go("/home");
+
+        //ignore: use_build_context_synchronously
+        GoRouter.of(context).go('/home');
       }
     } finally {
       isFirst = false;

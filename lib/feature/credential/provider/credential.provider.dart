@@ -1,11 +1,11 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:joysper_homework1/core/utils/app_user_manager.dart';
 import 'package:joysper_homework1/core/utils/base_provider.dart';
 import 'package:joysper_homework1/feature/credential/dto/user_dto.dart';
 
 class CredentialProvider extends BaseProvider {
-  //*Login Form Controllers
   TextEditingController loginEmailController = TextEditingController();
   TextEditingController loginPasswordController = TextEditingController();
 
@@ -21,14 +21,13 @@ class CredentialProvider extends BaseProvider {
       setLoading(true);
     }
 
-    /// TODO BURADA KALDIN HOCAM
     try {
       final UserCredential? userCredential =
           await UserDto.signIn(email, password);
       if (userCredential != null) {
         AppUserManager().user = await UserDto.getCurrentUser();
         // ignore: use_build_context_synchronously
-        Navigator.pushNamedAndRemoveUntil(context, '/home', (route) => false);
+        context.go('/home');
       }
     } catch (e) {
       // ignore: use_build_context_synchronously
