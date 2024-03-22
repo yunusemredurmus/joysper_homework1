@@ -6,19 +6,16 @@ import 'package:joysper_homework1/feature/credential/services/auth_services.dart
 import 'package:joysper_homework1/feature/credential/services/i_auth_service.dart';
 
 class UserDto {
-  final String id;
   final String email;
   final String password;
 
   UserDto({
-    required this.id,
     required this.email,
     required this.password,
   });
 
   Map<String, dynamic> toMap() {
     return <String, dynamic>{
-      'id': id,
       'email': email,
       'password': password,
     };
@@ -26,7 +23,6 @@ class UserDto {
 
   factory UserDto.fromMap(Map<String, dynamic> map) {
     return UserDto(
-      id: map['id'] as String,
       email: map['email'] as String,
       password: map['password'] as String,
     );

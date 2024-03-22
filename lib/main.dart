@@ -4,6 +4,7 @@ import 'package:go_router/go_router.dart';
 import 'package:joysper_homework1/feature/credential/provider/credential.provider.dart';
 import 'package:joysper_homework1/feature/home/login_screen.dart';
 import 'package:joysper_homework1/feature/home/screens/home_screen.dart';
+import 'package:joysper_homework1/feature/navbar_page/bottom_navbar_page.dart';
 import 'package:joysper_homework1/feature/splash/provider/splash_provider.dart';
 import 'package:joysper_homework1/feature/splash/screens/splash_screen.dart';
 import 'package:joysper_homework1/firebase_options.dart';
@@ -25,21 +26,21 @@ class MyAppRouts {
         pageBuilder: (context, state) {
           return const MaterialPage(child: SplashScreen());
         },
-        routes: [
-          GoRoute(
-            name: 'home',
-            path: 'home',
-            pageBuilder: (context, state) {
-              return const MaterialPage(child: HomeScreen());
-            },
-          ),
-          GoRoute(
+        routes: [GoRoute(
             name: 'login',
             path: 'login',
             pageBuilder: (context, state) {
               return const MaterialPage(child: LoginScreen());
             },
           ),
+          GoRoute(
+            name: 'navbar',
+            path: 'navbar',
+            pageBuilder: (context, state) {
+              return const MaterialPage(child: BottomNavbar());
+            },
+          ),
+          
         ],
       ),
     ],
@@ -58,7 +59,6 @@ class MainApp extends StatelessWidget {
       providers: [
         ChangeNotifierProvider(create: (_) => SplashProvider()),
         ChangeNotifierProvider(create: (_) => CredentialProvider()),
-        // Diğer providerlar buraya eklenebilir
       ],
       child: MaterialApp.router(
         routerConfig: MyAppRouts().route,

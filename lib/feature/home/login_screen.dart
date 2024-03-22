@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:go_router/go_router.dart';
 import 'package:joysper_homework1/feature/credential/provider/credential.provider.dart';
 import 'package:provider/provider.dart';
@@ -46,26 +47,21 @@ class LoginScreen extends StatelessWidget {
                   controller: provider.loginPasswordController,
                   decoration: InputDecoration(
                       border: OutlineInputBorder(), hintText: "Şifre"),
+                  obscureText: true,
                 ),
                 const SizedBox(height: 20),
-                Row(
-                  children: [
-                    Expanded(
-                      child: ElevatedButton(
-                        style: ElevatedButton.styleFrom(
-                          backgroundColor: Colors.blue,
-                        ),
-                        onPressed: () {
-                          provider.login(context);
-                          // GoRouter.of(context).go('/home');
-                        },
-                        child: const Text(
-                          "Giriş Yap",
-                          style: TextStyle(color: Colors.white),
-                        ),
-                      ),
-                    ),
-                  ],
+                ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    minimumSize: Size(double.infinity, 40),
+                    backgroundColor: Colors.blue,
+                  ),
+                  onPressed: () {
+                    provider.login(context);
+                  },
+                  child: const Text(
+                    "Giriş Yap",
+                    style: TextStyle(color: Colors.white),
+                  ),
                 ),
               ],
             ),

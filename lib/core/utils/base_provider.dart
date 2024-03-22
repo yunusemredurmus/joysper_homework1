@@ -9,3 +9,4 @@ class BaseProvider with ChangeNotifier {
     notifyListeners();
   }
 }
+/// Loading işlemi için kullanılıyor.

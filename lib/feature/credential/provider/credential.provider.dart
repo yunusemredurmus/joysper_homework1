@@ -6,8 +6,8 @@ import 'package:joysper_homework1/core/utils/base_provider.dart';
 import 'package:joysper_homework1/feature/credential/dto/user_dto.dart';
 
 class CredentialProvider extends BaseProvider {
-  TextEditingController loginEmailController = TextEditingController();
-  TextEditingController loginPasswordController = TextEditingController();
+  TextEditingController loginEmailController = TextEditingController(text: 'deneme@deneme.com');
+  TextEditingController loginPasswordController = TextEditingController(text: 'test123');
 
   void login(BuildContext context) async {
     final email = loginEmailController.text;
@@ -27,7 +27,7 @@ class CredentialProvider extends BaseProvider {
       if (userCredential != null) {
         AppUserManager().user = await UserDto.getCurrentUser();
         // ignore: use_build_context_synchronously
-        context.go('/home');
+        context.go('/navbar');
       }
     } catch (e) {
       // ignore: use_build_context_synchronously

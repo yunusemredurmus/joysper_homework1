@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 
-class StaticsBody extends StatelessWidget {
-  const StaticsBody({super.key});
+class SettingsBody extends StatelessWidget {
+  const SettingsBody({super.key});
 
   @override
   Widget build(BuildContext context) {
     return const Center(
-      child: Text("Statics Body"),
+      child: Text("Settings Body"),
     );
   }
 }

@@ -36,10 +36,17 @@ class _SplashScreenState extends State<SplashScreen> {
               child: Text("Onboarding Ekranı"),
             ),
             ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                minimumSize: Size(double.infinity, 40),
+                backgroundColor: Colors.blue,
+              ),
               onPressed: () {
-                GoRouter.of(context).go('/login');
+                context.go('/login');
               },
-              child: const Text('Login'),
+              child: const Text(
+                "Giriş Yap",
+                style: TextStyle(color: Colors.white),
+              ),
             ),
           ],
         ),

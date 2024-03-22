@@ -33,7 +33,7 @@ class AuthService implements IAuthService {
       final QuerySnapshot<Map<String, dynamic>> data = await FirebaseFirestore
           .instance
           .collection('users')
-          .where('id', isEqualTo: FirebaseAuth.instance.currentUser?.uid)
+          .where('email', isEqualTo: FirebaseAuth.instance.currentUser?.email)
           .get();
 
       // Veri bulunamazsa veya boşsa null döndür
