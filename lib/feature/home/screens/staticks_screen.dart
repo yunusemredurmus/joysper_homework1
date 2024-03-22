@@ -6,7 +6,7 @@ class StaticsBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Center(
-      child: Text("Statics Body"),
+      child: Text("İstatistikler"),
     );
   }
 }

@@ -18,7 +18,7 @@ class SplashProvider extends BaseProvider {
         notifyListeners();
 
         //ignore: use_build_context_synchronously
-        GoRouter.of(context).go('/home');
+        context.go("navbar");
       }
     } finally {
       isFirst = false;

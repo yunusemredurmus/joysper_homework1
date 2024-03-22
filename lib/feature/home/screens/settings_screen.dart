@@ -6,7 +6,7 @@ class SettingsBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Center(
-      child: Text("Settings Body"),
+      child: Text("Ayarlar"),
     );
   }
 }

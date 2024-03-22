@@ -1,4 +1,5 @@
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:joysper_homework1/core/utils/app_user_manager.dart';
@@ -13,13 +14,11 @@ class HomeBody extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Row(
-            children: [
-              Text("Merhaba ${AppUserManager().user?.email }"),
-            ],
-          ),
+          Align(
+              alignment: Alignment.topLeft,
+              child: Text("Merhaba ${AppUserManager().user?.email}")),
           const Center(
-            child: Text("Home Body"),
+            child: Text("Anasayfa"),
           ),
           const SizedBox.shrink(),
         ],
